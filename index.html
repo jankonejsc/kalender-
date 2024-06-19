@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passwortgeschützte Weiterleitung</title>
+</head>
+<body>
+    <h2>Bitte geben Sie das Passwort ein, um fortzufahren:</h2>
+    <form id="passwordForm">
+        <label for="password">Passwort:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('passwordForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var password = document.getElementById('trustnest').value;
+            var correctPassword = 'deinPasswort'; // Setze hier dein gewünschtes Passwort ein
+            var redirectUrl = 'https://youtu.be/x7h6Nn4SV7E'; // Setze hier den YouTube-Link ein
+
+            if (password === correctPassword) {
+                window.location.href = redirectUrl;
+            } else {
+                alert('Falsches Passwort');
+            }
+        });
+    </script>
+</body>
+</html>
